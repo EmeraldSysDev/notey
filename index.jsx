@@ -58,7 +58,7 @@ module.exports = class Notey extends Plugin {
     //   render: (props) => <Settings {...props} main={this} />
     // });
 
-    http.get(Endpoints.NOTES).then(res => FluxDispatcher.dirtyDispatch({
+    http.get(Endpoints.NOTES).then(res => FluxDispatcher.dispatch({
       type: 'NOTEY_LOADED_NOTES',
       notes: res.body
     }));
